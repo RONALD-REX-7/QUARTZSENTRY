@@ -103,6 +103,7 @@ npm run preview
 ## Deployment Configuration
 
 This repository includes native Vercel configuration ([`vercel.json`](./vercel.json)):
+- **Live Research Demonstrator**: [https://quartzsentry-prototype.vercel.app](https://quartzsentry-prototype.vercel.app)
 - **Framework**: Vite
 - **Build Command**: `npm run build`
 - **Output Directory**: `dist`
