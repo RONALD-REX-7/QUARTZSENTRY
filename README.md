@@ -151,5 +151,6 @@ Third-party font and UI assets are cataloged in [`ASSET_LICENSES.md`](./ASSET_LI
 
 - **Institution**: S.A. Engineering College (Autonomous), Poonamallee–Avadi High Road, Thiruverkadu, Chennai 600077, Tamil Nadu, India
 - **Team**: METRYPHOR
-- **Institutional Contact Placeholder**: `[Department of Electrical & Electronics Engineering / Department of Computer Science & Engineering, S.A. Engineering College — Inquiries: contact@saec.ac.in (To be configured by project owner)]`
+- **Maintainer Inquiries**: Ronald Rex C H ([@RONALD-REX-7](https://github.com/RONALD-REX-7)) via GitHub Issues or Security Advisories.
+- **Academic Disclaimer**: Developed as an undergraduate student engineering research proof-of-concept and competition demonstrator. Does not constitute official institutional endorsement.
 - **Licensing Registry**: Complete asset, font, and dependency licensing details are cataloged in [`ASSET_LICENSES.md`](./ASSET_LICENSES.md).

@@ -106,7 +106,7 @@ export function OverviewView({
               <span className="card-title">Battery Pack Visualization (Simulated 16-Cell Module)</span>
               <span className="text-xs text-muted mono">Target Cell: C8</span>
             </div>
-            <div className="battery-grid" role="grid" aria-label="16-cell battery module telemetry">
+            <div className="battery-grid" role="region" aria-label="16-cell battery module telemetry">
               {sim.cells.map((c) => {
                 const cellTooltip = `Cell C${c.id + 1}: ${c.v.toFixed(2)}V, ${c.t.toFixed(1)}°C — ${
                   c.isFaulty ? 'FAULT DETECTED (Impedance Anomaly)' : 'Nominal'
@@ -114,7 +114,7 @@ export function OverviewView({
                 return (
                   <div
                     key={c.id}
-                    role="gridcell"
+                    role="group"
                     tabIndex={0}
                     title={cellTooltip}
                     aria-label={cellTooltip}
