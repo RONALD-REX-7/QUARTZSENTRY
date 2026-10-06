@@ -118,6 +118,30 @@ This repository includes native Vercel configuration ([`vercel.json`](./vercel.j
 
 ---
 
+
+---
+
+## Known Limitations & Scope Boundaries
+
+1. **Client-Side Simulation Engine**: Sensor telemetry (EIS Nyquist impedance, acoustic RMS, off-gas ppm, and 16-cell voltage distributions) is deterministically generated in-memory via mathematical models in `src/simulation.ts` rather than a live physical battery pack.
+2. **Deterministic Precursor Timeline**: The simulated fault injector executes synthetic degradation trajectories (e.g., SEI layer breakdown and micro-dendrite growth) to evaluate front-end UI visualization and early warning timing.
+3. **No Direct HV Switching**: This repository represents the software and human-machine interface (HMI) layer; it does not directly switch high-voltage physical battery contactors.
+
+---
+
+## Future Hardware & Engineering Roadmap
+
+- [ ] **Physical Sensor Bench Validation**: Integrate a physical AD5933 impedance converter IC and piezoelectric acoustic sensor with an ESP32-S3 microcontroller test bench.
+- [ ] **On-Chip TinyML Inference**: Port the time-series anomaly detection filter to embedded C++ using TensorFlow Lite for Microcontrollers (TFLM).
+- [ ] **Hardware-in-the-Loop (HIL) Testing**: Bridge real-time CAN/TWAI bus telemetry from physical microcontroller nodes directly into the telemetry dashboard.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).  
+Third-party font and UI assets are cataloged in [ASSET_LICENSES.md](./ASSET_LICENSES.md).
+
 ## Institutional Attribution & Contact
 
 - **Institution**: S.A. Engineering College (Autonomous), Poonamallee–Avadi High Road, Thiruverkadu, Chennai 600077, Tamil Nadu, India
