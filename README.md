@@ -5,6 +5,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Oxlint](https://img.shields.io/badge/Oxlint-Passing-green)](https://oxc.rs/)
 [![WCAG](https://img.shields.io/badge/WCAG-2.2_AA_Compliant-blue)](https://www.w3.org/WAI/standards-guidelines/wcag/)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 > **Academic Engineering Prototype & Software Demonstrator**  
 > **Team:** METRYPHOR  
@@ -139,8 +140,11 @@ This repository includes native Vercel configuration ([`vercel.json`](./vercel.j
 
 ## License
 
-This project is licensed under the [MIT License](./LICENSE).  
-Third-party font and UI assets are cataloged in [ASSET_LICENSES.md](./ASSET_LICENSES.md).
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+See the [`LICENSE`](./LICENSE) file for the full license text.
+Third-party font and UI assets are cataloged in [`ASSET_LICENSES.md`](./ASSET_LICENSES.md).
+
+---
 
 ## Institutional Attribution & Contact
 

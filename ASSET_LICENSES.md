@@ -1,5 +1,7 @@
 # Asset & Dependency Licensing Registry — QUARTZSENTRY
 
+**Project License**: QUARTZSENTRY original source code is licensed under the Apache License, Version 2.0. See [`LICENSE`](./LICENSE).
+
 This document provides a comprehensive audit of all fonts, icons, third-party libraries, and graphic assets utilized in the **QUARTZSENTRY** prototype, documenting their identifiable sources, versions, and licenses.
 
 ---
