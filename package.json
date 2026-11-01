@@ -2,6 +2,7 @@
   "name": "quartzsentry",
   "private": true,
   "version": "0.0.0",
+  "description": "Academic software demonstrator simulating multimodal sensor fusion and early thermal runaway mitigation for Li-ion battery modules",
   "type": "module",
   "license": "Apache-2.0",
   "scripts": {
