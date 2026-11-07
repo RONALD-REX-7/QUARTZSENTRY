@@ -99,6 +99,7 @@ npm run dev
 
 ## 5. Security & Maintenance
 
+- **Lead Architect & Maintainer**: [Ronald Rex](https://github.com/RONALD-REX-7) — Thermal runaway telemetry demonstrator & dashboard UI.
 - **License**: Released under the **Apache License 2.0**. See [`LICENSE`](./LICENSE) for terms.
 - **Security Policy**: See [`SECURITY.md`](./SECURITY.md) for vulnerability disclosure guidelines.
 - **Contributing Guidelines**: See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for branching and verification procedures.
