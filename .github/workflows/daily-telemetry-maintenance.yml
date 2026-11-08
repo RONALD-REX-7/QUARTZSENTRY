@@ -1,0 +1,75 @@
+name: Daily Sensor Telemetry & Build Maintenance
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Every day at 00:00 UTC (05:30 AM IST)
+  workflow_dispatch: # Allows manual trigger anytime from Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-maintenance-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  daily-build-verify:
+    name: Lint & Build Verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linter (oxlint)
+        id: lint-check
+        run: |
+          npm run lint
+          echo "lint_status=Passed" >> $GITHUB_OUTPUT
+
+      - name: Run TypeScript typecheck and Vite build
+        id: build-check
+        run: |
+          npm run build
+          echo "build_status=Passed" >> $GITHUB_OUTPUT
+
+      - name: Update Daily Telemetry Ledger
+        run: |
+          DATE_STR=$(date -u +"%Y-%m-%d")
+          TIME_STR=$(date -u +"%H:%M:%S UTC")
+          LINT_ST="${{ steps.lint-check.outputs.lint_status }}"
+          BUILD_ST="${{ steps.build-check.outputs.build_status }}"
+          
+          echo "| $DATE_STR | $TIME_STR | Node 22 | $LINT_ST (oxlint) | $BUILD_ST (Vite) | ✅ Healthy |" >> docs/DAILY_TELEMETRY_LEDGER.md
+          echo "Updated docs/DAILY_TELEMETRY_LEDGER.md for $DATE_STR"
+
+      - name: Commit and Push Verified Telemetry
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/DAILY_TELEMETRY_LEDGER.md
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(telemetry): update daily sensor telemetry and build ledger [skip ci]
+
+          Automated daily oxlint static analysis and Vite production build assertion.
+
+          Co-authored-by: Ronald Rex <211186833+RONALD-REX-7@users.noreply.github.com>"
+            git push origin main
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
